@@ -1,0 +1,23 @@
+<div class="background">
+    <img src="https://imotion-images.s3.us-east-2.amazonaws.com/1014895.jpg" (load)="loading()" />
+</div>
+<div class="container heading">
+    <h1 class="label">TV Shows</h1>
+</div>
+<app-category-slider [category]="newRelease"></app-category-slider>
+<div class="container" id="movies">
+    <p class="label"> For you</p>
+    <div class="movies">
+        <div class="img" *ngFor="let movie of tvshows" [routerLink]="['/watch', movie?._id]">
+            <img src="{{movie?.thumbnail}}" />
+            <div class="movie-details">
+                <p class="title">{{movie?.title}}</p>
+                <p class="tag label">{{movie?.tag.join(' &sdot; ')}}</p>
+                <p class="plot">{{movie?.plot.substring(0,250)}}</p>
+            </div>
+            <div class="play-btn">Play</div>
+            <div class="watched" [style.width]="movie?.watched ? movie?.watched+'%': '0%'"></div>
+        </div>
+    </div>
+</div>
+<app-loader *ngIf="!loaded"></app-loader>

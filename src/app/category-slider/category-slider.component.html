@@ -1,0 +1,11 @@
+<div class="category-slider" [style.marginTop]="margin ? '-80px':'0px'">
+    <div class="category">
+        <p class="label">{{categoryTitle}}</p>
+        <div class="slider">
+            <div class="img" *ngFor="let category of category" [routerLink] ="['/watch', category?._id]" routerLinkActive = "active" [routerLinkActiveOptions]= "{exact:true}">
+                <img src="{{category?.thumbnail}}" alt ="video-thumbnail" />
+                <div class="watched" [style.width]="category?.watched ? category?.watched+'%': '0%'"></div>
+            </div>
+        </div>
+    </div>
+</div>

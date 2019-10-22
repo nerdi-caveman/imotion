@@ -1,0 +1,30 @@
+<nav role="navigation" [class.active] = "!!clicked">
+    <div id="nav-bar" class="row space-between">
+        <div class="nav-routes row">
+            <p class="logo">IMOTION</p>
+            <ul class="row" id ="page-nav">
+                <li><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click) = "toggleNav()">Home</a>
+                </li>
+                <li><a [routerLink]="['/tvshows']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click) = "toggleNav()">TV
+                        Shows</a></li>
+                <li><a [routerLink]="['/movies']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact:true}" (click) = "toggleNav()">Movies</a></li>
+                <li><a [routerLink]="['/mylist']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click) = "toggleNav()">My
+                        List</a></li>
+            </ul>
+        </div>
+        <ul class="nav-routes row" id ="user-nav">
+            <li id="login" *ngIf="!auth.isAuthenticated()"><a class="btn btn-primary btn-sm"
+                    [routerLink]="['/account/login']" (click) = "toggleNav()">Login</a></li>
+            <li id="signup" *ngIf="!auth.isAuthenticated()"><a class="btn btn-primary-inverted btn-sm"
+                    [routerLink]="['/account/signup']" (click) = "toggleNav()">Signup</a></li>
+            <li *ngIf="auth.isAuthenticated()" (click)="toggleNav()" class="btn btn-primary btn-sm" (click) = "toggleNav()">Logout</li>
+            <li id = "greetings"><a *ngIf="auth.isAuthenticated()" routerLinkActive="active">Welcome {{getName()}}</a></li>
+        </ul>
+    </div>
+    <div id="nav-icon" (click) = "toggleNav()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</nav>

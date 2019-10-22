@@ -1,0 +1,8 @@
+<div class="background">
+    <img src="{{home?.thumbnail}}" (load) ="loading()" />
+</div>
+<app-homeslider [category]="home" [inList] = "inLists" (addToList) = "addToList($event)"></app-homeslider>
+<app-category-slider [category]="trending" [margin]="true" categoryTitle="Trending"></app-category-slider>
+<app-category-slider [category]="watching" categoryTitle="Continue watching"></app-category-slider>
+<app-category-slider [category]="newRelease" categoryTitle="New Release"></app-category-slider>
+<app-loader *ngIf = "!loaded"></app-loader>

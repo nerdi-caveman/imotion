@@ -1,0 +1,49 @@
+<div class="container">
+    <form class="form" #loginForm="ngForm" (ngSubmit)="signup(loginForm.value)">
+        <div class="row">
+            <div class="form-group">
+                <label>Firstname</label>
+                <input type="text" (ngModel)="firstname" name="firstname" id="firstname"
+                    placeholder="Whats your firstname">
+            </div>
+            <div class="form-group">
+                <label>Lastname</label>
+                <input type="text" (ngModel)="lastname" name="lastname" id="lastname" placeholder="Whats your lastname">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" (ngModel)="username" id="username" placeholder="Choose a username">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" (ngModel)="email" name="email" id="email" placeholder="Whats your email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" (ngModel)="password" name="password"
+                    placeholder="Choose a secret password">
+            </div>
+            <div class="form-group">
+                <label>Re-enter password</label>
+                <input type="password" id="re_password" (ngModel)="repassword" name="re_password"
+                    placeholder="Type password again">
+            </div>
+        </div>
+        <div class="row" *ngIf="!isMatch">
+            <div class="form-group">
+                <p>Password dont match</p>
+            </div>
+        </div>
+        <div class="row" *ngIf="!fieldSet">
+            <div class="form-group">
+                <p>Fill in all data</p>
+            </div>
+        </div>
+        <div class="form-group"></div>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>

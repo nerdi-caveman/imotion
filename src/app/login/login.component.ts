@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class LoginComponent implements OnInit {
   username;
-  passswod;
+  password;
 
   constructor( private authService: AuthService, private services: UserServices, private router: Router) { }
   ngOnInit() {

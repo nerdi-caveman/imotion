@@ -23,13 +23,13 @@ if (access) {
   protectedRoute = [
     {path: 'watch/:id', component: WatchComponent },
     {path: 'mylist', component: MylistComponent },
-    {path: '', component: HomeComponent},
+    {path: '', component: HomeComponent, pathMatch: 'full'},
   ];
 } else {
   protectedRoute = [
     {path: 'watch/:id', redirectTo : 'account/login' },
-    {path: 'mylist', redirectTo : 'account/login', pathMatch: 'full'},
-    {path: '', component: HomeComponent},
+    {path: 'mylist', redirectTo : 'account/login'},
+    {path: '', component: HomeComponent, pathMatch: 'full'},
   ];
 }
 for (const data of protectedRoute) {

@@ -3,14 +3,14 @@
         <div class="row">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" id = "username" (ngModel)="username" name="username"
+                <input type="text" id="username" (ngModel)="username" name="username" value="inioluwwa4"
                     placeholder="Whats your username?">
             </div>
         </div>
         <div class="row">
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" id ="password" (ngModel)="password" name="password"
+                <input type="password" id="password" (ngModel)="password" name="password" value="123456"
                     placeholder="Type your secret password?">
             </div>
         </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="form-group"></div>
         <div class="row">
-            <button type="button" [routerLink] ="['/account/signup']" >SIGNUP</button>
+            <button type="button" [routerLink]="['/account/signup']">SIGNUP</button>
         </div>
     </form>
 </div>

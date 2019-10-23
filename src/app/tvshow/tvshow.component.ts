@@ -18,7 +18,6 @@ export class TvshowComponent implements OnInit {
     try {
       this.videoServices.getNewRelease().subscribe( (res) => {
           this.newRelease = res;
-          console.log(res);
       });
     } catch (e) {
       alert(e);
@@ -26,7 +25,6 @@ export class TvshowComponent implements OnInit {
     try {
       this.videoServices.getTvShows().subscribe( (res) => {
           this.tvshows = res;
-          console.log(res);
       });
     } catch (e) {
       alert(e);

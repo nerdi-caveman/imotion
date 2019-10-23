@@ -22,7 +22,6 @@ export class NavbarComponent implements OnInit {
   }
   toggleNav() {
     this.clicked = !this.clicked;
-    console.log(this.clicked);
   }
   getName() {
     return window.localStorage.getItem('name');
